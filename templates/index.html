@@ -44,7 +44,17 @@
                 <label class="btn btn-outline-secondary" for="self-employed">Self-Employed  </label>
             </div>
         </div>
-        <button class="btn btn-secondary mb-4x" type="submit">Submit</button>
+        <button class="btn btn-secondary mb-4" type="submit">Submit</button>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
 
     </form>
 </div>
